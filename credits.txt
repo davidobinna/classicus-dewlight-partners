@@ -1,0 +1,16 @@
+------------------------------------------
+ CREDITS
+------------------------------------------
+
+    - Bootstrap 5    -    https://getbootstrap.com
+
+    - Font Awesome   -    https://fontawesome.com
+
+    - gLightbox2     -    https://biati-digital.github.io/glightbox/
+
+
+------------------------------------------
+ IMAGES
+------------------------------------------
+
+    - All images credits go to https://www.pexels.com
