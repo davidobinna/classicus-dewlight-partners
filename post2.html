@@ -19,11 +19,30 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.png">
 
-   
+    <script src="https://cdn.jsdelivr.net/npm/trig-js/src/trig.min.js"></script>
+
+    <style>
+      .fadeIn { 
+    opacity: 0;
+}
+.fadeIn.trig { 
+    animation: fadeIn 1s normal forwards ease-in-out; 
+}
+
+@keyframes fadeIn { 
+    0% { 
+        opacity: 0;
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+}
+
+    </style>
   </head>
   <body>
     <!-- navbar-->
-    <header class="header" >                   
+    <header class="header fadeIn" data-trig>                   
       <nav class="navbar navbar-expand-lg navbar-light py-4 index-forward bg-white">
         <div class="container d-flex justify-content-center justify-content-lg-between align-items-center">
           <ul class="list-inline small mb-0 text-dark d-none d-lg-block">
@@ -64,7 +83,7 @@
         </div>
       </nav>
     </header>
-    <section class="py-5">
+    <section class="py-5 fadeIn" data-trig>
       <div class="container py-4">
         <div class="row text-center">
           <div class="col-lg-8 mx-auto"><a class="category-link mb-3 d-inline-block" href="#!">Attorneys</a>
