@@ -37,6 +37,37 @@
     } 
 }
 
+
+  /* Style for the overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Style for the image inside the overlay */
+  .overlay img {
+    max-width: 90%; /* Limiting the maximum width of the image */
+    max-height: 90%; /* Limiting the maximum height of the image */
+  }
+
+  /* Style for the cancel button */
+  .cancel-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
     </style>
   </head>
   <body>
@@ -162,14 +193,14 @@
 <ul class="list-unstyled comments">
   <li>
     <div class="d-flex mb-4">
-      <div class="flex-shrink-0"><img class="rounded-circle shadow-sm img-fluid" src="img/person-1.jpg" alt="John Doe" width="60"/></div>
+      <div class="flex-shrink-0"><img class="rounded-circle shadow-sm img-fluid" src="img/review.jpeg" alt="John Doe" width="70" id="review-img"/></div>
       <div class="ms-3">
-        <p class="small mb-0 text-primary fw-normal">15 Aug 2021</p>
-        <h5>John Doe</h5>
-        <p class="text-muted text-sm mb-2">Classicus & Dewlight Partners is an outstanding law firm. They provided me with exceptional legal services, and I couldn't be more satisfied with the outcome. Their expertise and professionalism are unmatched. Highly recommend!</p><a class="reset-anchor text-sm" href="#!"><i class="fas fa-share me-2 text-primary"></i><strong>Reply</strong></a>
+        <p class="small mb-0 text-primary fw-normal">15 jan 2024</p>
+        <h5>Oluwatobi Elugbadebo - Manager three ace energy limited</h5>
+        <p class="text-muted text-sm mb-2">I am incredibly grateful for the exceptional legal services provided by Classicus & Dewlight Partners. Their expertise, dedication, and professionalism exceeded my expectations at every turn. I highly recommend their services for any person and company in need of top-notch legal representation.</p><a class="reset-anchor text-sm" href="#!"><i class="fas fa-share me-2 text-primary"></i><strong>Reply</strong></a>
       </div>
     </div>
-    <ul class="list-unstyled ms-5">
+     <!---     <ul class="list-unstyled ms-5">
       <li> 
         <div class="d-flex mb-4">
           <div class="flex-shrink-0"><img class="rounded-circle shadow-sm img-fluid" src="img/person-2.jpg" alt="Jane Smith" width="60"/></div>
@@ -191,7 +222,7 @@
         <p class="text-muted text-sm mb-2">My experience with Classicus & Dewlight Partners was exceptional. Their team provided me with excellent legal support, and I was impressed by their professionalism and attention to detail. I highly recommend their services to anyone seeking legal assistance.</p><a class="reset-anchor text-sm" href="#!"><i class="fas fa-share me-2 text-primary"></i><strong>Reply</strong></a>
       </div>
     </div>
-  </li>
+  </li> -->
 </ul>
 
           </div>
@@ -293,6 +324,37 @@
       </div>
     </footer>
     <!-- JavaScript files-->
+    <!-- Overlay container for the zoomed image -->
+    <div class="overlay" id="overlay">
+      <!-- Cancel button to revert back to initial state -->
+      <button class="cancel-btn" id="cancel-btn">Close</button>
+      <!-- Zoomed image -->
+      <img class="zoomed-img" src="img/review.jpeg" alt="Zoomed Image" id="zoomed-img"/>
+    </div>
+    <script>
+      // Get the image element and overlay
+      const reviewImg = document.getElementById("review-img");
+      const overlay = document.getElementById("overlay");
+      const zoomedImg = document.getElementById("zoomed-img");
+      const cancelBtn = document.getElementById("cancel-btn");
+    
+      // Add click event listener to the image
+      reviewImg.addEventListener("click", function() {
+        // Show the overlay
+        overlay.style.display = "flex";
+        // Show the zoomed image
+        zoomedImg.style.display = "block";
+      });
+    
+      // Add click event listener to the cancel button
+      cancelBtn.addEventListener("click", function() {
+        // Hide the overlay
+        overlay.style.display = "none";
+        // Hide the zoomed image
+        zoomedImg.style.display = "none";
+      });
+    </script>
+
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/glightbox/js/glightbox.min.js"></script>
     <script src="js/front.js"></script>
